@@ -1,0 +1,27 @@
+en:
+  lita:
+    adapters:
+      slack:
+    handlers:
+      jira:
+        error:
+          request: Error fetching JIRA issue
+        help:
+          details:
+            syntax: jira <issue>
+            desc: Shows detailed information for <issue>
+        issue:
+          created: "Issue %{key} created"
+          details: "[%{key}] %{summary}\n*Status:* %{status}, *Assigned To:* %{assigned}\n*Target Version:* %{targetVersion}, *Fix Version:* %{fixVersion}\n*VIP Category:* %{vipCategory}, *Priority:* %{priority}\n%{url}"
+          oneline: "%{url} - %{status}, %{assigned} - %{summary}"
+          summary: "%{key}: %{summary}"
+        comment:
+          added: "Comment and Affects Version '%{affects_version}' added to %{issue}"
+        hockeyappissues:
+          new: "This is a new issue, logged as %{site}/browse/%{key}"
+          duplicate: "This is a duplicate issue of:"
+          invalid_release: "<!here> Someone is playing with the invalid `%{release}` release build."
+          affects_version_undef_bot: "<!here> The `%{release}` affects version is not defined in my bot configs. `%{release}` crashes will not be processed until that is done."
+          affects_version_undef_jira: "<!here> The `%{release}` affects version is not defined in JIRA. `%{release}` crashes will not be processed until that is done."
+        release:
+          excluded: "The %{release} release is excluded from bot processing, ignoring."
